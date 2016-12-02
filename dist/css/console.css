@@ -1,0 +1,380 @@
+@charset "UTF-8";
+/* 全局样式 */
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei"; }
+
+body {
+  margin: 0;
+  font-size: 12px; }
+
+/**
+    * app-sidebar-full 展开|收缩 应用侧边栏开关样式，并调整产品区left距离 放在应用主体区app-body上（应用主体父元素）
+    * sidebar-nav-fold 展开|收缩 侧边一级导航栏 放在sidebar-nav 元素上
+    * app-product-navbar-full 展开|收缩 二级导航侧边栏 放在app-product元素上（产品区父元素）
+    * 结构如下
+    * app-topbar
+    * app-body | app-sidebar-full(tags:侧边栏开关标记)
+    *      app-sidebar
+    *              app-sidebar-inner
+    *                  div.app-sidebar-fold fa（btn:侧边栏开关）
+    *                  div.sidebar-nav | sidebar-nav-fold(tags:收缩标记)
+    *                      div.sidebar-title（btn:导航列表开关）
+    *                          span.sidebar-title-icon ~ span.sidebar-title-text ~ span.sidebar-title-manage
+    *                      ul.sidebar-ul
+    *                          li>a>sidebar-item-icon ~ sidebar-item-title
+    *      app-product | app-product-navbar-full(tags:二级导航侧边栏开关标记)
+    *              div.app-product-navbar
+    *              div.app-product-navbar-collapse (btn:二级导航侧边栏开关）
+    *              div.app-product-body(view:工作区）
+    *
+   */
+.app-topbar {
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  background: #09C;
+  z-index: 101;
+  display: block; }
+
+.app-body {
+  position: absolute;
+  width: 100%;
+  top: 50px;
+  bottom: 0;
+  background-color: #000;
+  z-index: 100; }
+
+/*侧边一级导航栏--start*/
+.app-sidebar {
+  width: 50px;
+  position: fixed;
+  top: 50px;
+  bottom: 0px;
+  background-color: #293038;
+  z-index: 102;
+  overflow-x: hidden; }
+
+.app-sidebar-full .app-sidebar {
+  width: 180px;
+  display: block; }
+.app-sidebar-full .app-sidebar-inner {
+  width: 200px; }
+
+.app-sidebar-inner {
+  width: 70px;
+  height: 100%;
+  overflow: auto;
+  overflow-x: hidden; }
+
+/*右侧产品显示区--start*/
+.app-product {
+  width: auto;
+  position: absolute;
+  top: 0;
+  left: 50px;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  background: #FFF; }
+
+.app-sidebar-full .app-product {
+  left: 180px; }
+
+/* 产品区二级导航栏--start */
+.app-product-navbar {
+  width: 0px;
+  float: left;
+  background-color: #EAEDF1;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  z-index: 2;
+  overflow: hidden;
+  -o-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease; }
+
+.app-product-navbar-full .app-product-navbar {
+  width: 180px;
+  display: block; }
+
+/*工作区--start*/
+.app-product-body {
+  position: absolute;
+  width: auto;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  overflow: hidden;
+  overflow-y: auto;
+  -o-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease; }
+
+.app-product-navbar-full .app-product-body {
+  left: 180px; }
+
+/*一级导航内部样式--start*/
+/*一级导航栏顶部折合开关*/
+.app-sidebar-fold {
+  height: 30px;
+  width: 50px;
+  background: #394555;
+  color: #aeb9c2;
+  text-align: center;
+  line-height: 30px !important;
+  font-size: 12px;
+  user-select: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none; }
+  .app-sidebar-fold:before {
+    content: "\f009"; }
+
+.app-sidebar-full .app-sidebar-fold {
+  width: 180px; }
+  .app-sidebar-full .app-sidebar-fold:before {
+    content: "\f00b"; }
+
+/*一级导航列表*/
+.sidebar-nav {
+  width: 180px; }
+
+.sidebar-title {
+  height: 40px;
+  background: #22282e;
+  color: #fff;
+  line-height: 40px;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  overflow: hidden; }
+
+.sidebar-title-icon {
+  float: left;
+  width: 50px;
+  text-align: center;
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle; }
+  .sidebar-title-icon i.fa {
+    transition: transform 0.12s;
+    -o-transition: -o-transform 0.12s;
+    -ms-transition: -ms-transform 0.12s;
+    -moz-transition: -moz-transform 0.12s;
+    -webkit-transition: -webkit-transform 0.12s; }
+
+.sidebar-title-text {
+  float: left; }
+
+.sidebar-title-manage {
+  vertical-align: middle;
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  right: 0;
+  top: 0; }
+  .sidebar-title-manage a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+    color: #a0abb3;
+    text-decoration: none; }
+    .sidebar-title-manage a:hover {
+      color: #fff; }
+
+.sidebar-nav-fold .sidebar-title {
+  background: #37424f;
+  border-bottom: 1px solid #414d5c; }
+.sidebar-nav-fold .sidebar-title-icon i.fa {
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg); }
+.sidebar-nav-fold .sidebar-ul {
+  height: 0 !important;
+  overflow: hidden; }
+
+.sidebar-ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  -o-transition: all 0.12s ease, 0.12s ease;
+  -ms-transition: all 0.12s ease, 0.12s ease;
+  -moz-transition: all 0.12s ease, 0.12s ease;
+  -webkit-transition: all 0.12s ease, 0.12s ease; }
+  .sidebar-ul li {
+    position: relative; }
+    .sidebar-ul li a {
+      display: block;
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      overflow: hidden; }
+      .sidebar-ul li a:hover {
+        background: #37424f; }
+      .sidebar-ul li a .sidebar-item-icon {
+        width: 50px;
+        text-align: center;
+        font-size: 16px;
+        float: left;
+        color: #aeb9c2; }
+      .sidebar-ul li a:hover .sidebar-item-icon {
+        color: #fff; }
+      .sidebar-ul li a .sidebar-item-title {
+        float: left;
+        overflow: hidden;
+        color: #fff;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display: none;
+        width: 130px; }
+
+.app-sidebar-full .sidebar-ul li a .sidebar-item-title {
+  display: block; }
+
+.sidebar-ul li.active a {
+  background: #0099cc; }
+  .sidebar-ul li.active a .sidebar-item-icon {
+    color: #fff; }
+
+/*二级导航侧边栏收缩按钮*/
+.app-product-navbar-collapse {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 20px;
+  height: 50px;
+  z-index: 3;
+  -o-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  box-sizing: border-box; }
+
+.product-navbar-collapse-inner {
+  top: -50%;
+  position: relative;
+  overflow: hidden;
+  height: 100%; }
+
+.product-navbar-collapse-icon {
+  width: 0;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom: 9px solid transparent;
+  border-left: 13px solid #D9DEE4;
+  border-top: 9px solid transparent;
+  box-sizing: border-box;
+  -o-transition: all 0.1s ease, 0.1s ease;
+  -ms-transition: all 0.1s ease, 0.1s ease;
+  -moz-transition: all 0.1s ease, 0.1s ease;
+  -webkit-transition: all 0.1s ease, 0.1s ease;
+  cursor: pointer; }
+  .product-navbar-collapse-icon:before {
+    content: "\f101";
+    top: 10px;
+    left: -9px;
+    position: relative; }
+  .product-navbar-collapse-icon:hover {
+    border-left: 20px solid #D9DEE4; }
+
+.app-product-navbar-full .app-product-navbar-collapse {
+  left: 160px; }
+.app-product-navbar-full .product-navbar-collapse-icon {
+  right: 0;
+  left: auto;
+  border-bottom: 9px solid transparent;
+  border-left: none;
+  border-right: 13px solid #f7f7f7;
+  border-top: 9px solid transparent; }
+  .app-product-navbar-full .product-navbar-collapse-icon:hover {
+    border-right: 20px solid #f7f7f7; }
+  .app-product-navbar-full .product-navbar-collapse-icon:before {
+    content: "\f100";
+    top: 10px;
+    left: 3px;
+    position: relative; }
+
+/* 二级导航内样式 */
+.product-navbar-header {
+  font-weight: bold;
+  text-indent: 20px;
+  width: 180px;
+  height: 70px;
+  line-height: 70px;
+  background: #D9DEE4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+.product-nav-list {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden; }
+  .product-nav-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+    .product-nav-list ul li a {
+      width: 180px;
+      height: 40px;
+      line-height: 40px;
+      display: block;
+      color: #333; }
+      .product-nav-list ul li a:hover {
+        background-color: #F4F6F8; }
+      .product-nav-list ul li a .nav-icon {
+        width: 30px;
+        height: 40px;
+        float: left;
+        text-align: center;
+        font-size: 14px;
+        color: #333;
+        line-height: 40px; }
+      .product-nav-list ul li a .nav-title {
+        width: 138px;
+        float: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+    .product-nav-list ul li.active a {
+      background-color: #FFF; }
+  .product-nav-list li > ul {
+    display: none; }
+  .product-nav-list a.nav-tree-link .nav-icon {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 14px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 40px; }
+  .product-nav-list li.nav-showchild a.nav-tree-link .nav-icon:before {
+    content: "\f0d7"; }
+  .product-nav-list li.nav-showchild > ul {
+    display: block; }
+  .product-nav-list a.nav-tree-link .nav-icon:before {
+    content: "\f0da"; }
+  .product-nav-list ul ul li a .nav-title {
+    text-indent: 8px;
+    color: #666; }
+
+/*子菜单*/
+
+/*# sourceMappingURL=console.css.map */

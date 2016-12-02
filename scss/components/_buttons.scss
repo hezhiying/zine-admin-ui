@@ -1,0 +1,108 @@
+//
+// Buttons
+// --------------------------------------------------
+
+// Base styles
+// --------------------------------------------------
+
+.btn {
+  font-size: 12px;
+  //border-radius: 5px;
+  padding: 8px 16px;
+  height: 32px;
+  line-height: 14px;
+}
+
+// Alternate buttons
+// --------------------------------------------------
+//color background-color border-color
+.btn-default {
+  @include button-create(map_get($btn-default-col,def), map_get($btn-default-col,hover));
+}
+
+.btn-primary {
+  @include button-create(map_get($btn-primary-col,def), map_get($btn-primary-col,hover));
+}
+
+// Success appears as green
+.btn-success {
+  @include button-create(map_get($btn-success-col,def), map_get($btn-success-col,hover));
+}
+
+// Info appears as blue-green
+.btn-info {
+  @include button-create(map_get($btn-info-col,def), map_get($btn-info-col,hover));
+}
+
+// Warning appears as orange
+.btn-warning {
+  @include button-create(map_get($btn-warning-col,def), map_get($btn-warning-col,hover));
+}
+
+// Danger and error appear as red
+.btn-danger {
+  @include button-create(map_get($btn-danger-col,def), map_get($btn-danger-col,hover));
+}
+
+// Link buttons
+// -------------------------
+
+// Make a button look and behave like a link
+.btn-link {
+  color: $link-color;
+  font-weight: normal;
+  border-radius: 0;
+
+  &,
+  &:active,
+  &.active,
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: transparent;
+    @include box-shadow(none);
+  }
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: underline;
+    background-color: transparent;
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus {
+      color: $btn-link-disabled-color;
+      text-decoration: none;
+    }
+  }
+}
+
+// Button Sizes
+// --------------------------------------------------
+//参数顺序：padding-vertical padding-horizontal font-size line-height,border-radius
+.btn-lg {
+  font-size: 14px;
+  padding: 12px 20px;
+  height: 40px;
+  line-height: 16px
+}
+
+.btn-sm {
+  font-size: 12px;
+  padding: 4px 12px;
+  height: 24px;
+  line-height: 14px
+}
+
+.btn-xs {
+  font-size: 12px;
+  padding: 2px 8px;
+  height: 20px;
+  line-height: 14px
+}
