@@ -1,3 +1,7 @@
+/**
+顶部导航按钮样式
+*/
+
 .app-topbar {
   position: fixed;
   width: 100%;
@@ -5,38 +9,90 @@
   background: $brand-primary;
   z-index: 101;
   display: block;
+  clear: both;
 
   a {
     text-decoration: none;
   }
 
-  .topbar-btn {
-    color: #fff;
-    font-size: 14px;
-    line-height: 50px;
-    border-radius: 0;
-    &:hover{
-      background: $brand-primary-dark;
+  //导航icon
+  .topbar-logo {
+    float: left;
+    background: darken($brand-primary, 5%);
+    display: block;
+    width: 50px;
+    font-size: 28px;
+    color: #FFF;
+    text-align: center;
+    line-height: 50px
+  }
+
+  //左侧按钮区
+  .topbar-nav {
+    background: $brand-primary-dark;
+    float: left;
+  }
+
+  //右侧按钮区
+  .topbar-info {
+    background: $brand-primary-dark;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+  }
+
+  //导航按钮
+  .topbar-info-item {
+    float: left;
+    margin-left: 1px;
+    .topbar-btn {
+      color: #fff;
+      padding: 0 10px;
+      font-size: 14px;
+      line-height: 50px;
+      border-radius: 0;
+      height: 50px;
+      display: block;
+      z-index: 2;
+      background: $brand-primary;
+      &:hover {
+        background: $brand-primary-dark;
+      }
+      //按钮内标签
+      .topbar-btn-label {
+        font-size: 12px;
+        color: #fff;
+        background: $brand-warning;
+        border-radius: 5px;
+        padding: 2px 5px;
+        display: inline-block;
+        margin-top: 15px;
+        line-height: 16px;
+        vertical-align: top;
+        text-align: center;
+      }
     }
   }
 
   //下拉菜单
-  .dropdown{
+  .dropdown {
     float: left;
-    &.open{
-      .topbar-btn{
+    //展开导航按钮的样式
+    &.open {
+      .topbar-btn {
         color: #333;
         background: #fff;
         border-bottom: 1px solid #eaedf1;
         position: relative;
-        &:hover{
+        &:hover {
           background: #fff;
 
         }
       }
     }
 
-    .dropdown-menu{
+    .dropdown-menu {
       width: 100%;
       min-width: 0;
       margin: 0;
@@ -45,17 +101,17 @@
       z-index: 1;
       font-size: 12px;
       border-radius: 0;
-      -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
-      li{
+      li {
         border-bottom: 1px solid #eaedf1;
       }
-      li.disabled a{
+      li.disabled a {
         color: #999999
       }
-      a{
+      a {
         line-height: 39px;
         padding: 0 0 0 10px;
         display: block;
@@ -68,38 +124,6 @@
       }
     }
 
-  }
-
-  //右侧按钮区
-  .topbar-info {
-    background: $brand-primary-dark;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    right: 0;
-
-    .topbar-info-item{
-      float: left;
-      margin-left:1px;
-    }
-    .topbar-btn {
-      padding: 0 10px;
-      height: 50px;
-      display: block;
-      z-index: 2;
-      background: $brand-primary;
-      &:hover{
-        background: $brand-primary-dark;
-      }
-      &:after{
-        margin-left: 1px;
-      }
-
-      &:before{
-        margin-left: 1px;
-      }
-
-    }
   }
 
 }

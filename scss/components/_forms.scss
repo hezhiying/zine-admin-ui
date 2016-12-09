@@ -1,0 +1,52 @@
+.form-control {
+  font-size: 12px;
+
+   &:hover  {
+    border-color: $brand-primary;
+  }
+}
+
+.has-feedback-left {
+
+  .form-control-feedback {
+    right: auto;
+    left: 0;
+
+    @at-root .form-horizontal & {
+      right: auto;
+      left: 10px;
+    }
+  }
+
+  .form-control {
+    padding-right: 12px;
+    padding-left: 36px;
+    .input-xlg {
+      padding-right: 10px;
+      padding-left: 42px;
+    }
+
+    .input-lg {
+      padding-right: 15px;
+      padding-left: 40px;
+    }
+    .input-sm {
+      padding-right: 11px;
+      padding-left: 34px;
+    }
+    .input-xs {
+      padding-right: 10px;
+      padding-left: 32px;
+    }
+  }
+
+}
+
+legend{
+  font-size: 14px;
+  padding: 3px 0;
+}
+label {
+  margin-bottom: 7px;
+  font-weight: 400;
+}

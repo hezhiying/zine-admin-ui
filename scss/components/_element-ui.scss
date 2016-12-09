@@ -1,0 +1,93 @@
+.el-form-item__label,
+.el-checkbox__label,
+.el-radio__label {
+  font-weight: 400;
+}
+
+.el-checkbox__inner.is-checked {
+  background-color: $brand-primary;
+  border-color: $brand-primary;
+}
+
+.el-date-editor__editor {
+  border-color: #ccc;
+}
+
+.el-input__inner {
+  height: 34px;
+  border: 1px solid #ccc;
+
+  &:focus, &:hover {
+    border-color: $brand-primary;
+  }
+  @at-root .el-select {
+    &:focus, &:hover {
+      border-color: $brand-primary;
+    }
+  }
+}
+
+.el-date-editor, .el-date-editor__editor, .el-time-panel__footer {
+  height: 34px;
+}
+
+.el-select .el-input__inner:focus, .el-input__inner:focus {
+  border-color: $brand-primary-light;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+.el-date-editor__trigger.el-icon {
+  font-size: 12px;
+  right: 2px;
+}
+
+.el-input, .el-date-editor__editor {
+  font-size: 12px;
+}
+
+.el-date-editor.is-active > .el-date-editor__editor, .el-date-editor:hover > .el-date-editor__editor, .el-date-editor__editor:focus {
+  border-color: $brand-primary;
+
+}
+
+.el-button--primary {
+  color: #fff;
+  background-color: $brand-primary;
+  border-color: $brand-primary;
+  &:hover, &:active, &.is-active, &:focus {
+    background-color: $brand-primary-light;
+    border-color: $brand-primary-light;
+  }
+}
+
+.el-button:focus, .el-button:hover {
+  border-color: $brand-primary;
+}
+
+.el-textarea__inner:focus {
+  border-color: $brand-primary;
+}
+
+.el-radio__inner {
+  &.is-checked {
+    border-color: $brand-primary;
+    background: $brand-primary;
+  }
+  &:not(.is-disabled):hover {
+    border-color: $brand-primary;
+  }
+}
+
+.el-switch__input:checked + .el-switch__core {
+  border-color: $brand-primary;
+  background-color: $brand-primary;
+}
+
+.sidebar-nav {
+  .el-tooltip,
+  .el-tooltip__rel {
+    display: block;
+  }
+}
+

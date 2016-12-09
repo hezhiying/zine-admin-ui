@@ -1,0 +1,144 @@
+.display-block {
+  display: block;
+}
+
+.content-group {
+  margin-bottom: 20px !important;
+}
+
+.width{
+
+}
+@each $i in (80,100,150,200) {
+  .width-#{$i} {
+    width: #{$i}px ;
+  }
+}
+
+//margin设置
+@each $i in (5, 10, 15, 20) {
+  .m-#{$i} {
+    margin: #{$i}px !important;
+  }
+  .mt-#{$i} {
+    margin-top: #{$i}px !important;
+  }
+  .mb-#{$i} {
+    margin-bottom: #{$i}px !important;
+  }
+  .mr-#{$i} {
+    margin-right: #{$i}px !important;
+  }
+  .ml-#{$i} {
+    margin-left: #{$i}px !important;
+  }
+
+}
+
+//padding 设置
+@each $i in (5, 10, 15, 20) {
+  .p-#{$i} {
+    padding: #{$i}px !important;
+  }
+  .pt-#{$i} {
+    padding-top: #{$i}px !important;
+  }
+  .pb-#{$i} {
+    padding-bottom: #{$i}px !important;
+  }
+  .pr-#{$i} {
+    padding-right: #{$i}px !important;
+  }
+  .pl-#{$i} {
+    padding-left: #{$i}px !important;
+  }
+
+}
+
+.no-margin {
+  margin: 0 !important;
+  @each $i in (top, bottom, left, right) {
+    &-#{$i} {
+      margin-#{$i}: 0 !important;
+    }
+  }
+}
+
+.no-padding {
+  padding: 0 !important;
+  @each $i in (top, bottom, left, right) {
+    &-#{$i} {
+      padding-#{$i}: 0 !important;
+    }
+  }
+}
+
+.no-border {
+  border: 0 !important;
+  @each $i in (top, bottom, left, right) {
+    &-#{$i} {
+      border-#{$i}: 0 !important;
+    }
+  }
+}
+
+//1px border
+
+.border {
+  border: 1px solid #e5e5e5;
+
+  @each $i in (top, bottom, left, right) {
+    &-#{$i} {
+      border-#{$i}: 1px solid #e5e5e5;
+
+    }
+  }
+}
+
+//2px border
+.border-lg {
+  border: 2px;
+  @each $i in (top, bottom, left, right) {
+    &-#{$i}-lg {
+      border-#{$i}: 2px solid;
+    }
+  }
+}
+
+//3px border
+.border-xlg {
+  border: 3px;
+  @each $i in (top, bottom, left, right) {
+    &-#{$i}-xlg {
+      border-#{$i}: 3px solid;
+    }
+  }
+}
+
+.no-border-radius {
+  border-radius: 0;
+}
+
+.no-border-radius-top {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.no-border-radius-bottom {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.no-border-radius-left {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.no-border-radius-right {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.full-width {
+  width: 100%;
+}

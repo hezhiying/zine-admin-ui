@@ -1,0 +1,10 @@
+.table{
+  &>thead{
+    &>tr{
+      &>th{
+        border-bottom: 1px solid #ddd;
+        background-color: #f5f5f5;
+      }
+    }
+  }
+}
